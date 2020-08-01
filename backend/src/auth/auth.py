@@ -151,9 +151,6 @@ def verify_decode_jwt(token):
         'description': 'Unable to find the appropriate key.'
     }, 400)
 
-# def verify_decode_jwt(token):
-#     return('Not Implemented')
-
 '''
 @TODO implement @requires_auth(permission) decorator method
     @INPUTS
@@ -172,6 +169,5 @@ def requires_auth(permission=''):
             payload = verify_decode_jwt(token)
             check_permissions(permission, payload)
             return f(payload, *args, **kwargs)
-
         return wrapper
     return requires_auth_decorator
