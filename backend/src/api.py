@@ -28,8 +28,7 @@ CORS(app)
         or appropriate status code indicating reason for failure
 '''
 @app.route('/drinks')
-@requires_auth(permission='')
-def get_drinks(permission=''):
+def get_drinks():
     drinks = Drink.query.all()
 
     return jsonify({
